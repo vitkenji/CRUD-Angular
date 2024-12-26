@@ -1,3 +1,5 @@
+import { Person } from "./person";
+
 export interface Collaborator{
     id: number;
     personId: number;
@@ -5,5 +7,5 @@ export interface Collaborator{
     registrationNumber: number;
     admissionDate?: Date;
     contribution?: number;
-
+    person? : Person;
 }

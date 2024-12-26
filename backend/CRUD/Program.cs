@@ -70,6 +70,7 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+app.UseCors("AllowAll");
 
 app.MapControllers();
 

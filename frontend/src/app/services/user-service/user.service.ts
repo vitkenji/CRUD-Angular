@@ -14,7 +14,7 @@ export class UserService {
 
   public async GetUsers(): Promise<User[] | undefined>{
     try{
-      return await this.http.get<User[]>(this.url).pipe().toPromise();
+      return await this.http.get<User[]>(this.url).toPromise();
     }
     catch{
       return undefined;
@@ -23,7 +23,7 @@ export class UserService {
 
   public async GetUserByUsername(username: string): Promise<User | undefined>{
     try{
-      return await this.http.get<User>(`${this.url}/${username}`).pipe().toPromise();
+      return await this.http.get<User>(`${this.url}/${username}`).toPromise();
     }
     catch{
       return undefined;      

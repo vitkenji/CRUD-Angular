@@ -1,0 +1,30 @@
+.layout-wrapper {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .layout-menu {
+    width: 250px;
+    background-color: #ecf0f1;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    padding-top: 16px;
+    z-index: 1000;
+  }
+  
+  .layout-main-container {
+    margin-left: 250px;
+    flex-grow: 1; 
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+  }
+  
+  .layout-main {
+    padding: 16px;
+    background-color: #ecf0f1;
+    min-height: 100vh;
+  }
+  

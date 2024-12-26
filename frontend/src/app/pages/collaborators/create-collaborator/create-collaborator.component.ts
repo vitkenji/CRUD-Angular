@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CollaboratorService } from '../../../services/collaborator-service/collaborator.service';
 
 @Component({
   selector: 'app-create-collaborator',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './create-collaborator.component.css'
 })
 export class CreateCollaboratorComponent {
-
+  constructor(private collaboratorService : CollaboratorService){}
 }

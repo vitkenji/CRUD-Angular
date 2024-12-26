@@ -19,9 +19,25 @@ export const routes: Routes = [
                     import('./pages/dashboard/dashboard.component').then(
                         (m) => m.DashboardComponent
                     ),
-                    canActivate: [authGuard],
-                    canDeactivate: [deactivateGuard],
-            }))
+                    //canActivate: [authGuard],
+                    //canDeactivate: [deactivateGuard],
+            })),
+            {
+                path: 'users',
+                loadComponent: () =>
+                    import('./pages/users/users/users.component').then(
+                        (m) => m.UsersComponent
+                    ),
+            },
+            {
+                path: 'collaborators',
+                loadComponent: () => 
+                    import('./pages/collaborators/collaborators/collaborators.component').then(
+                        (m) => m.CollaboratorsComponent
+                    )
+            }
+
+            
         ]
 
     }

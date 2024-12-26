@@ -1,1 +1,23 @@
-<p>menu works!</p>
+<mat-sidenav #sidenav mode="side" opened class="custom-sidenav">
+  <div class="sidenav-header">
+    <span>user</span>
+  </div>
+  <mat-nav-list>
+    <a mat-list-item (click)="navigateTo('dashboard')" class="nav-item">
+      <mat-icon>dashboard</mat-icon>
+      <span>Home</span>
+    </a>
+    <a mat-list-item (click)="navigateTo('users')" class="nav-item">
+      <mat-icon>group</mat-icon>
+      <span>Users</span>
+    </a>
+    <a mat-list-item (click)="navigateTo('collaborators')" class="nav-item">
+      <mat-icon>people</mat-icon>
+      <span>Collaborators</span>
+    </a>
+  </mat-nav-list>
+  <button mat-button class="logout-btn">
+    <mat-icon>exit_to_app</mat-icon>
+    <span>Logout</span>
+  </button>
+</mat-sidenav>

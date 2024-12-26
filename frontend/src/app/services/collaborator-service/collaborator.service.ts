@@ -1,12 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
 import { Collaborator } from '../../models/collaborator';
 import { collaboratorDTO } from '../../models/DTO/collaboratorDTO';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CollaboratorService {
 
@@ -16,7 +14,7 @@ export class CollaboratorService {
 
   public async getCollaborators(): Promise<Collaborator[] | undefined> {
     try{
-      return await this.http.get<Collaborator[]>(this.url).pipe().toPromise();
+      return await this.http.get<Collaborator[]>(this.url).toPromise();
     }
     catch{
       return [];
@@ -25,7 +23,7 @@ export class CollaboratorService {
 
   public async getCollaboratorById(id :number): Promise<Collaborator | undefined>{
     try{
-     return await this.http.get<Collaborator>(`${this.url}/${id}`).pipe().toPromise();
+     return await this.http.get<Collaborator>(`${this.url}/${id}`).toPromise();
     }
     catch{
       return undefined;
