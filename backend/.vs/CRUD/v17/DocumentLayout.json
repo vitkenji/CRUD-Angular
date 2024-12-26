@@ -1,0 +1,165 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\vkzya\\CRUD\\CRUD\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\controllers\\telephonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\controllers\\telephonecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\controllers\\collaboratorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\controllers\\collaboratorcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\dto\\collaboratordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\dto\\collaboratordto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\dto\\addressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\dto\\addressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|c:\\users\\vkzya\\crud\\crud\\crud\\dto\\telephonedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1E4E56A5-2F60-46DD-BB29-4CF822FAF30C}|CRUD\\CRUD.csproj|solutionrelative:crud\\dto\\telephonedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "CRUD\\Services\\AuthService.cs",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Services\\AuthService.cs",
+              "RelativeToolTip": "CRUD\\Services\\AuthService.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAowC8AAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T18:37:19.249Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CollaboratorController.cs",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Controllers\\CollaboratorController.cs",
+              "RelativeDocumentMoniker": "CRUD\\Controllers\\CollaboratorController.cs",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Controllers\\CollaboratorController.cs",
+              "RelativeToolTip": "CRUD\\Controllers\\CollaboratorController.cs",
+              "ViewState": "AQIAADgAAAAAAAAAAAAIwD8AAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T17:51:13.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TelephoneController.cs",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Controllers\\TelephoneController.cs",
+              "RelativeDocumentMoniker": "CRUD\\Controllers\\TelephoneController.cs",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Controllers\\TelephoneController.cs",
+              "RelativeToolTip": "CRUD\\Controllers\\TelephoneController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-25T17:50:36.335Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\appsettings.json",
+              "RelativeDocumentMoniker": "CRUD\\appsettings.json",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\appsettings.json",
+              "RelativeToolTip": "CRUD\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-24T23:20:05.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "CRUD\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Controllers\\UserController.cs",
+              "RelativeToolTip": "CRUD\\Controllers\\UserController.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAgwFEAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T23:19:04.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Program.cs",
+              "RelativeDocumentMoniker": "CRUD\\Program.cs",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\Program.cs",
+              "RelativeToolTip": "CRUD\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACAAAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T23:15:56.672Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CollaboratorDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\DTO\\CollaboratorDTO.cs",
+              "RelativeDocumentMoniker": "CRUD\\DTO\\CollaboratorDTO.cs",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\DTO\\CollaboratorDTO.cs",
+              "RelativeToolTip": "CRUD\\DTO\\CollaboratorDTO.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAAowAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T23:05:11.853Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddressDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\DTO\\AddressDTO.cs",
+              "RelativeDocumentMoniker": "CRUD\\DTO\\AddressDTO.cs",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\DTO\\AddressDTO.cs",
+              "RelativeToolTip": "CRUD\\DTO\\AddressDTO.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T23:03:29.317Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "TelephoneDTO.cs",
+              "DocumentMoniker": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\DTO\\TelephoneDTO.cs",
+              "RelativeDocumentMoniker": "CRUD\\DTO\\TelephoneDTO.cs",
+              "ToolTip": "C:\\Users\\vkzya\\CRUD\\CRUD\\CRUD\\DTO\\TelephoneDTO.cs",
+              "RelativeToolTip": "CRUD\\DTO\\TelephoneDTO.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-24T23:01:13.15Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
