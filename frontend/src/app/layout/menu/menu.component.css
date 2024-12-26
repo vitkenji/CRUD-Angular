@@ -1,129 +1,77 @@
-.custom-sidenav {
-    width: 250px;
-    background-color: #fefefd;
-    color: white;
-  }
-  
-  .sidenav-header {
-    display: flex;
-    align-items: center;.custom-sidenav {
-      width: 250px;
-      background-color: #fefefd;
-      color: #34495e; 
-      padding-bottom: 50px;
-    }
-    
-    .sidenav-header {
-      display: flex;
-      align-items: center;
-      padding: 16px;
-      background-color: #34495e;
-      color: white;
-    }
-    
-    .sidenav-header mat-icon {
-      font-size: 32px;
-      margin-right: 10px;
-    }
-    
-    .sidenav-header span {
-      font-size: 20px;
-      font-weight: bold;
-    }
-    
-    mat-nav-list {
-      padding: 0;
-    }
-    
-    .nav-item {
-      display: flex;
-      align-items: center;
-      padding: 12px;
-      color: #34495e; 
-      text-transform: uppercase;
-      transition: background-color 0.3s, color 0.3s;
-    }
-    
-    .nav-item mat-icon {
-      margin-right: 16px;
-    }
-    
-    .nav-item:hover {
-      background-color: #16a085;
-      color: white;
-    }
-    
-    .logout-btn {
-      position: absolute;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: #e74c3c;
-      font-size: 16px;
-      font-weight: bold;
-      transition: transform 0.3s ease, background-color 0.3s;
-      background-color: #ecf0f1;
-      border-radius: 50px;
-      padding: 10px 20px;
-      width: 90%;
-      text-align: center;
-    }
-    
-    .logout-btn:hover {
-      background-color: #e74c3c;
-      color: white;
-      transform: scale(1.1); 
-    }
-    
-    .logout-btn mat-icon {
-      margin-right: 8px;
-      font-size: 20px;
-    }
-    
-    padding: 16px;
-    background-color: #34495e;
-  }
-  
-  .sidenav-header mat-icon {
-    font-size: 32px;
-    margin-right: 10px;
-  }
-  
-  .sidenav-header span {
-    font-size: 20px;
-    font-weight: bold;
-  }
-  
-  mat-nav-list {
-    padding: 0;
-  }
-  
-  .nav-item {
-    display: flex;
-    align-items: center;
-    padding: 12px;
-    color: white;
-    text-transform: uppercase;
-    transition: background-color 0.3s;
-  }
-  
-  .nav-item mat-icon {
-    margin-right: 16px;
-  }
-  
-  .nav-item:hover {
-    background-color: #16a085;
-  }
-  
-  .logout-btn {
-    position: absolute;
-    bottom: 16px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-  }
-  
-  .logout-btn mat-icon {
-    margin-right: 8px;
-  }
-  
+.custom-sidenav { 
+  width: 250px;
+  background-color: #fefefd;
+  color: #34495e; 
+  padding-bottom: 50px;
+}
+
+.sidenav-header {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  background-color: #34495e;
+  color: white;
+}
+
+.sidenav-header mat-icon {
+  font-size: 32px;
+  margin-right: 10px;
+}
+
+.sidenav-header span {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+mat-nav-list {
+  padding: 0;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  color: #34495e;
+  text-transform: uppercase;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item mat-icon {
+  margin-right: 16px;
+}
+
+.nav-item:hover {
+  background-color: #16a085;
+  color: white;
+}
+
+.logout-btn {
+  position: absolute;
+  bottom: 30px;  /* Ajuste da posição inferior */
+  left: 50%;
+  transform: translateX(-50%);
+  color: #ffffff;
+  font-size: 18px;  /* Tamanho da fonte ajustado */
+  font-weight: bold;
+  background-color: #2980b9;  /* Cor azul mais adequada */
+  padding: 12px 24px;  /* Tamanho do botão ajustado */
+  width: 90%;
+  text-align: center;
+  border: none;  /* Retirando as bordas arredondadas */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra leve para dar destaque */
+  transition: background-color 0.3s, box-shadow 0.3s;
+  display: flex;  /* Usar flexbox para o alinhamento do conteúdo */
+  justify-content: center;  /* Centraliza o texto */
+  align-items: center;  /* Alinha o ícone e o texto ao centro */
+}
+
+.logout-btn:hover {
+  background-color: #1f648b;  /* Tom mais escuro de azul no hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Sombra mais pronunciada */
+}
+
+.logout-btn mat-icon {
+  margin-right: 8px;  /* Ajustei o espaço entre o ícone e o texto */
+  font-size: 24px;  /* Tamanho do ícone maior */
+  margin-left: -10px;  /* Deslocando o ícone um pouco para a esquerda */
+}

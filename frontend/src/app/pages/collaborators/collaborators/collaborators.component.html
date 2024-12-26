@@ -1,7 +1,7 @@
-<h2 class="collaborators-header">Collaborators</h2>
+<h2 class="users-header">Collaborators</h2>
 <table mat-table [dataSource]="dataSource" class="custom-table">
   <ng-container matColumnDef="registrationNumber">
-    <th mat-header-cell *matHeaderCellDef class="table-header">Number</th>
+    <th mat-header-cell *matHeaderCellDef class="table-header">Registration Nº</th>
     <td mat-cell *matCellDef="let collaborator" class="table-cell">{{collaborator.registrationNumber}}</td>
   </ng-container>
   <ng-container matColumnDef="name">
@@ -16,3 +16,5 @@
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay" class="table-row"></tr>
 </table>
+
+<button mat-raised-button class="custom-button">New Collaborator</button>

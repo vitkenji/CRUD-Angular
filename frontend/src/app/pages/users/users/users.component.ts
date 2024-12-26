@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from '../../../services/user-service/user.service';
 import { User } from '../../../models/user';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-users',
-  imports: [MatTableModule],
+  imports: [MatTableModule, MatButtonModule],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })

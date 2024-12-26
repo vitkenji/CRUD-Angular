@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CollaboratorService } from '../../../services/collaborator-service/collaborator.service';
 import { Collaborator } from '../../../models/collaborator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-collaborators',
-  imports: [MatTableModule],
+  imports: [MatTableModule, MatButtonModule],
   templateUrl: './collaborators.component.html',
   styleUrl: './collaborators.component.css'
 })

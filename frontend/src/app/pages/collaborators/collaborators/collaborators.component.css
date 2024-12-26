@@ -1,4 +1,4 @@
-.collaborators-header {
+.users-header {
     font-size: 24px;
     font-weight: bold;
     color: #34495e;
@@ -60,5 +60,32 @@
     .table-cell {
       font-size: 14px;
     }
+  }
+  
+  .custom-button {
+    background-color: #34495e; 
+    color: white;
+    font-size: 14px; 
+    font-weight: bold; 
+    padding: 10px 20px; 
+    border-radius: 6px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+    margin-top: 20px; 
+  }
+  
+  .custom-button:hover {
+    background-color: #34495e; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); 
+  }
+  
+  .custom-button:focus {
+    outline: none; 
+    box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.3); 
+  }
+  
+  .custom-button:active {
+    background-color: #34495e; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); 
   }
   
