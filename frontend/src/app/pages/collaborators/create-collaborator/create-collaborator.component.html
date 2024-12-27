@@ -3,16 +3,21 @@
     <mat-form-field>
       <mat-label>Registration Number</mat-label>
       <input matInput formControlName="registrationNumber" (keydown)="validateNumber($event)" required>
+      <mat-error *ngIf="collaboratorForm.get('registrationNumber')?.hasError('required')">Registration number required</mat-error>
     </mat-form-field>
   
     <mat-form-field>
       <mat-label>Name</mat-label>
       <input matInput formControlName="name" minlength="6" maxlength="50" required>
+      <mat-error *ngIf="collaboratorForm.get('name')?.hasError('required')">Name required</mat-error>
+      <mat-error *ngIf="collaboratorForm.get('name')?.hasError('minlength')">Minimum of 6 characters</mat-error>
+      <mat-error *ngIf="collaboratorForm.get('name')?.hasError('maxlength')">Maximum of 50 characters</mat-error>
     </mat-form-field>
     
     <mat-form-field>
       <mat-label>CPF</mat-label>
-      <input matInput formControlName="CPF"  maxlength="11" (keydown)="validateNumber($event)" required>
+      <input matInput formControlName="CPF" [maskito]="CPFmask" maxlength="14" (keydown)="validateNumber($event)" required>
+      <mat-error *ngIf="collaboratorForm.get('CPF')?.hasError('required')">CPF required</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -20,11 +25,13 @@
       <input matInput [matDatepicker]="picker" formControlName="birthDate" required>
       <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="collaboratorForm.get('birthDate')?.hasError('required')">Birth Date required</mat-error>
     </mat-form-field>
 
     <mat-form-field>
       <mat-label>RG</mat-label>
-      <input matInput formControlName="RG"  maxlength="10" (keydown)="validateNumber($event)" required>
+      <input matInput formControlName="RG"  [maskito]="RGmask" maxlength="13" (keydown)="validateNumber($event)" required>
+      <mat-error *ngIf="collaboratorForm.get('RG')?.hasError('required')">RG required</mat-error>
     </mat-form-field>
 
     <mat-form-field>
@@ -34,6 +41,7 @@
         <mat-option value="2">Intern</mat-option>
         <mat-option value="3">Outsourced</mat-option>
       </mat-select>
+      <mat-error *ngIf="collaboratorForm.get('collaboratorType')?.hasError('required')">Type required</mat-error>
     </mat-form-field>
 
     <mat-form-field>
