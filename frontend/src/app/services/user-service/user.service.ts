@@ -30,9 +30,9 @@ export class UserService {
     }
   }
 
-  public async PostUser(userDTO : UserDTO){
+  public async PostUser(userDTO : UserDTO) : Promise<void>{
     try{
-      await this.http.post(this.url, userDTO);
+      await this.http.post(this.url, userDTO).toPromise();
     }
     catch{
       return;

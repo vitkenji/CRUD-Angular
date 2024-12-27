@@ -1,1 +1,53 @@
-<p>create-collaborator works!</p>
+<h2 class="header">Create Collaborator</h2>
+<form [formGroup]="collaboratorForm" (ngSubmit)="postCollaborator()">
+    <mat-form-field>
+      <mat-label>Registration Number</mat-label>
+      <input matInput formControlName="registrationNumber" (keydown)="validateNumber($event)" required>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" minlength="6" maxlength="50" required>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="CPF"  maxlength="11" (keydown)="validateNumber($event)" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate" required>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>RG</mat-label>
+      <input matInput formControlName="RG"  maxlength="10" (keydown)="validateNumber($event)" required>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Collaborator type</mat-label>
+      <mat-select formControlName="collaboratorType" required>
+        <mat-option value="1">Permanent</mat-option>
+        <mat-option value="2">Intern</mat-option>
+        <mat-option value="3">Outsourced</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contribution</mat-label>
+      <input currencyMask [options]="{prefix : 'R$', thousands: '.', decimal: ','}" matInput formControlName="contribution">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Admission Date</mat-label>
+      <input matInput [matDatepicker]="picker2" formControlName="admissionDate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+        
+      <button mat-raised-button type="submit" color="primary">Submit</button>
+  </form>

@@ -30,10 +30,38 @@ export const routes: Routes = [
                     ),
             },
             {
+                path: 'create-user',
+                loadComponent: () => 
+                    import('./pages/users/create-user/create-user.component').then(
+                        (m) => m.CreateUserComponent
+                    )
+            },
+            {
+                path: 'update-user',
+                loadComponent: () => 
+                    import('./pages/users/update-user/update-user.component').then(
+                        (m) => m.UpdateUserComponent
+                    )
+            },
+            {
                 path: 'collaborators',
                 loadComponent: () => 
                     import('./pages/collaborators/collaborators/collaborators.component').then(
                         (m) => m.CollaboratorsComponent
+                    )
+            },
+            {
+                path: 'create-collaborator',
+                loadComponent: () => 
+                    import('./pages/collaborators/create-collaborator/create-collaborator.component').then(
+                        (m) => m.CreateCollaboratorComponent
+                    )
+            },
+            {
+                path: 'update-collaborator',
+                loadComponent: () => 
+                    import('./pages/collaborators/update-collaborator/update-collaborator.component').then(
+                        (m) => m.UpdateCollaboratorComponent
                     )
             }
 

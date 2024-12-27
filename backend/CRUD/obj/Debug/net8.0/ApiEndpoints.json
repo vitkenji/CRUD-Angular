@@ -101,44 +101,9 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "RegistrationNumber",
-        "Type": "System.Int32",
-        "IsRequired": false
-      },
-      {
-        "Name": "Name",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "CPF",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "BirthDate",
-        "Type": "System.DateTime",
-        "IsRequired": false
-      },
-      {
-        "Name": "RG",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "Contribution",
-        "Type": "System.Decimal",
-        "IsRequired": false
-      },
-      {
-        "Name": "CollaboratorType",
-        "Type": "System.String",
-        "IsRequired": false
-      },
-      {
-        "Name": "AdmissionDate",
-        "Type": "System.DateTime",
-        "IsRequired": false
+        "Name": "request",
+        "Type": "CRUD.DTO.CollaboratorDTO",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

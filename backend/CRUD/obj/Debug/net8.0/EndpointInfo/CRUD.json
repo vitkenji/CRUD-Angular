@@ -152,83 +152,25 @@
         "tags": [
           "Collaborator"
         ],
-        "parameters": [
-          {
-            "name": "RegistrationNumber",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "minimum": 0,
-              "type": "integer",
-              "format": "int32"
-            }
-          },
-          {
-            "name": "Name",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "maxLength": 50,
-              "minLength": 6,
-              "type": "string"
-            }
-          },
-          {
-            "name": "CPF",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "maximum": 99999999999,
-              "minimum": 0,
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "BirthDate",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "format": "date-time"
-            }
-          },
-          {
-            "name": "RG",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "maxLength": 10,
-              "type": "string"
-            }
-          },
-          {
-            "name": "Contribution",
-            "in": "query",
-            "schema": {
-              "maximum": 9999,99,
-              "minimum": 0,
-              "type": "number",
-              "format": "double"
-            }
-          },
-          {
-            "name": "CollaboratorType",
-            "in": "query",
-            "required": true,
-            "schema": {
-              "$ref": "#/components/schemas/CollaboratorType"
-            }
-          },
-          {
-            "name": "AdmissionDate",
-            "in": "query",
-            "schema": {
-              "type": "string",
-              "format": "date-time"
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CollaboratorDTO"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CollaboratorDTO"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CollaboratorDTO"
+              }
             }
           }
-        ],
+        },
         "responses": {
           "200": {
             "description": "Success"
@@ -472,6 +414,58 @@
         ],
         "type": "integer",
         "format": "int32"
+      },
+      "CollaboratorDTO": {
+        "required": [
+          "birthDate",
+          "collaboratorType",
+          "cpf",
+          "name",
+          "registrationNumber",
+          "rg"
+        ],
+        "type": "object",
+        "properties": {
+          "registrationNumber": {
+            "minimum": 0,
+            "type": "integer",
+            "format": "int32"
+          },
+          "name": {
+            "maxLength": 50,
+            "minLength": 6,
+            "type": "string"
+          },
+          "cpf": {
+            "maximum": 99999999999,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "birthDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "rg": {
+            "maxLength": 11,
+            "minLength": 1,
+            "type": "string"
+          },
+          "contribution": {
+            "maximum": 9999,99,
+            "minimum": 0,
+            "type": "number",
+            "format": "double"
+          },
+          "collaboratorType": {
+            "$ref": "#/components/schemas/CollaboratorType"
+          },
+          "admissionDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
       },
       "CollaboratorType": {
         "enum": [

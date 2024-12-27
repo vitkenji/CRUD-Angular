@@ -30,11 +30,14 @@ export class CollaboratorService {
     }
   }
 
-  public async PostCollaborator(collaboratorDTO: collaboratorDTO){
+  public async PostCollaborator(collaboratorDTO: collaboratorDTO) : Promise<void>{
     try{
-      await this.http.post(this.url, collaboratorDTO);
+      console.log(this.url);
+      console.log(collaboratorDTO);
+      await this.http.post(this.url, collaboratorDTO).toPromise();
     }
-    catch{
+    catch (error : any){
+      console.log(error);
       return;
     }
   }

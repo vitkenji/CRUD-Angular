@@ -48,7 +48,7 @@ namespace CRUD.Controllers
             }
         }
         [HttpPost]
-        public async Task<IActionResult> postCollaborator([FromQuery] CollaboratorDTO request)
+        public async Task<IActionResult> postCollaborator(CollaboratorDTO request)
         {
             try
             {

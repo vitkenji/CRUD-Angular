@@ -47,31 +47,31 @@ mat-nav-list {
 
 .logout-btn {
   position: absolute;
-  bottom: 30px;  /* Ajuste da posição inferior */
+  bottom: 30px; 
   left: 50%;
   transform: translateX(-50%);
   color: #ffffff;
-  font-size: 18px;  /* Tamanho da fonte ajustado */
+  font-size: 18px; 
   font-weight: bold;
-  background-color: #2980b9;  /* Cor azul mais adequada */
-  padding: 12px 24px;  /* Tamanho do botão ajustado */
+  background-color: #2980b9; 
+  padding: 12px 24px;  
   width: 90%;
   text-align: center;
-  border: none;  /* Retirando as bordas arredondadas */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Sombra leve para dar destaque */
+  border: none;  
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  
   transition: background-color 0.3s, box-shadow 0.3s;
-  display: flex;  /* Usar flexbox para o alinhamento do conteúdo */
-  justify-content: center;  /* Centraliza o texto */
-  align-items: center;  /* Alinha o ícone e o texto ao centro */
+  display: flex;  
+  justify-content: center;  
+  align-items: center;  
 }
 
 .logout-btn:hover {
-  background-color: #1f648b;  /* Tom mais escuro de azul no hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  /* Sombra mais pronunciada */
+  background-color: #1f648b; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);  
 }
 
 .logout-btn mat-icon {
-  margin-right: 8px;  /* Ajustei o espaço entre o ícone e o texto */
-  font-size: 24px;  /* Tamanho do ícone maior */
-  margin-left: -10px;  /* Deslocando o ícone um pouco para a esquerda */
+  margin-right: 8px;  
+  font-size: 24px;  
+  margin-left: -10px;  
 }

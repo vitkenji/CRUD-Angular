@@ -3,6 +3,7 @@ import { UserService } from '../../../services/user-service/user.service';
 import { User } from '../../../models/user';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-users',
@@ -14,9 +15,9 @@ export class UsersComponent implements OnInit {
 
   users: User[] = [];
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>();
-  columnsToDisplay = ['username', 'name'];
+  columnsToDisplay = ['username', 'name', 'edit', 'delete'];
   
-  constructor(private userService : UserService) {}
+  constructor(private userService : UserService, private router : Router) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -30,7 +31,13 @@ export class UsersComponent implements OnInit {
     }
   }
 
+  public navigateTo(route: string, append?: number) {
+    var path = route;
+    if(append != null){
+      path = path + `/${append}`;
+    }
 
-  
+    this.router.navigate([path]);
+  }
 
 }
