@@ -17,16 +17,16 @@ export class AddressService {
       await this.http.post(`${this.url}/${personId}`, addressDTO).toPromise();
     }
     catch{
-      return;
+      throw new Error;
     }
   }
 
-  public async DeleteAddress(personId: number, addressId: number){
+  public async DeleteAddress(personId: number, addressId: number) : Promise<void>{
     try{
-      return await this.http.delete(`${this.url}/${personId}/${addressId}`);
+      await this.http.delete(`${this.url}/${personId}/${addressId}`).toPromise();
     }
     catch{
-      return;
+      throw new Error;
     }
   }
 

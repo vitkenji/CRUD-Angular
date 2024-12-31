@@ -4,19 +4,13 @@ import { User } from '../../../models/user';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteUserComponent } from '../delete-user/delete-user.component';
 
 @Component({
   selector: 'app-users',
-  imports: [MatTableModule, MatButtonModule],
+  imports: [MatTableModule, MatButtonModule, MatDialogModule],
   templateUrl: './users.component.html',
   styleUrl: './users.component.css'
 })
@@ -26,7 +20,7 @@ export class UsersComponent implements OnInit {
   dataSource: MatTableDataSource<User> = new MatTableDataSource<User>();
   columnsToDisplay = ['username', 'name', 'edit', 'delete'];
   
-  constructor(private userService : UserService, private router : Router) {}
+  constructor(private userService : UserService, private router : Router, private dialog : MatDialog) {}
 
   ngOnInit(): void {
     this.loadUsers();
@@ -47,6 +41,12 @@ export class UsersComponent implements OnInit {
     }
 
     this.router.navigate([path]);
+  }
+
+  openDialog(user : User) {
+    this.dialog.open(DeleteUserComponent, {
+      data: user
+    });
   }
 
 }

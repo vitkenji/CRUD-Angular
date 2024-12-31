@@ -8,24 +8,37 @@ import { BehaviorSubject, firstValueFrom } from 'rxjs';
 })
 export class AuthService {
   
-  private url = 'https://localhost:7234/api/User/login';
+  private url = 'https://localhost:7234/login';
 
-  userData: any = JSON.parse(localStorage.getItem('user_data')!);
+  response : any = 
+  {
+    token : '',
+  }
 
   private isLoggedInSubject: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
 
   constructor(private router: Router, private http: HttpClient) { }
 
-  public async login(username: string, password: string) {
+  public getUsername() : string{
+    return localStorage.getItem('username') ?? '';
+  }
+
+  public async login(username: string, password: string) : Promise<boolean> {
     try{
-      var response = await this.http.get<string>(this.url);
-      await this.getToken(response);
-      return this.hasValidToken();
+      this.logout();
+      this.response = await this.http.get<string>(`${this.url}/${username}/${password}`).toPromise();
+      if(this.response){
+        localStorage.setItem('access_token', String(this.response.token));
+        localStorage.setItem('isLoggedIn', 'true');
+        localStorage.setItem('username', username);
+        return true;
+      }
+      return false;
     }
     catch(error: any){
       console.log(error);
-      return;
+      return false;
     }
   }
 
@@ -33,12 +46,14 @@ export class AuthService {
     this.isLoggedInSubject.next(false);
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('access_token');
+    localStorage.removeItem('username');
   }
 
   private async getToken(response: any) {
     try {
       let accessToken = (await firstValueFrom<any>(response))?.access_token;
       if (accessToken) {
+        console.log(accessToken);
         localStorage.setItem('access_token', accessToken);
         localStorage.setItem('isLoggedIn', 'true');
 
@@ -48,7 +63,6 @@ export class AuthService {
           'user_data',
           JSON.stringify(JSON.parse(payload))
         );
-        this.userData = JSON.parse(localStorage.getItem('user_data')!);
         
         this.isLoggedInSubject.next(true);
       }
@@ -78,10 +92,7 @@ export class AuthService {
 
   public hasValidToken(): boolean | Promise<boolean> {
     const authToken = localStorage.getItem('access_token') || '';
-    let expiresIn = this.parseJwt(authToken)
-      ? this.parseJwt(authToken).exp * 1000
-      : 0;
-    if (!!authToken && (expiresIn === 0 || expiresIn > Date.now())) {
+    if (!!authToken) {
       return true;
     }
     return false;

@@ -45,9 +45,9 @@ export class CollaboratorService {
     }
   }
 
-  public async DeleteCollaborator(id: number){
+  public async DeleteCollaborator(id: number) : Promise<void>{
     try{
-      await this.http.delete(`${this.url}/${id}`);
+      await this.http.delete(`${this.url}/${id}`).toPromise();
     }
     catch{
       return;

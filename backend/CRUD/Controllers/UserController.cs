@@ -47,8 +47,8 @@ namespace CRUD.Controllers
             }
         }
 
-        [HttpGet("/login")]
-        public async Task<IActionResult> Login([FromQuery] string username, [FromQuery] string password)
+        [HttpGet("/login/{username}/{password}")]
+        public async Task<IActionResult> Login(string username, string password)
         {
             try
             {

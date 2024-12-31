@@ -4,10 +4,13 @@ import { Collaborator } from '../../../models/collaborator';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { Router } from '@angular/router';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteCollaboratorComponent } from '../delete-collaborator/delete-collaborator.component';
 
 @Component({
   selector: 'app-collaborators',
-  imports: [MatTableModule, MatButtonModule],
+  imports: [MatTableModule, MatButtonModule, MatDialogModule],
   templateUrl: './collaborators.component.html',
   styleUrl: './collaborators.component.css',
 })
@@ -17,7 +20,7 @@ export class CollaboratorsComponent implements OnInit {
     new MatTableDataSource<Collaborator>();
   columnsToDisplay = ['registrationNumber', 'name', 'type', 'edit', 'delete'];
 
-  constructor(private collaboratorService: CollaboratorService, private router : Router) {}
+  constructor(private collaboratorService: CollaboratorService, private router : Router, public dialog : MatDialog) {}
 
   ngOnInit(): void {
     this.loadCollaborators();
@@ -49,4 +52,11 @@ export class CollaboratorsComponent implements OnInit {
     }
     this.router.navigate([path]);
   }
+
+  openDialog(collaborator : Collaborator) {
+      this.dialog.open(DeleteCollaboratorComponent, {
+        data : collaborator
+      });
+    }
+
 }

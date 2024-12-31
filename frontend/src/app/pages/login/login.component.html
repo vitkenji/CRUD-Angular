@@ -1,1 +1,27 @@
-<p>login works!</p>
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+    <h2 class="header">Login</h2>
+  
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" required>
+      <mat-error *ngIf="loginForm.get('username')?.hasError('required')">Username required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" required [type]="showPassword ? 'text' : 'password'">
+
+      <i class="far fa-eye eye-show" 
+         (click)="showPassword = !showPassword" 
+         [class.hide]="showPassword"></i>
+
+      <i class="far fa-eye-slash eye-hide" 
+         (click)="showPassword = !showPassword" 
+         [class.hide]="!showPassword"></i>
+  
+      <mat-error *ngIf="loginForm.get('password')?.hasError('required')">Password required</mat-error>
+    </mat-form-field>
+  
+    <button mat-raised-button type="submit" color="primary">Login</button>
+  </form>
+  

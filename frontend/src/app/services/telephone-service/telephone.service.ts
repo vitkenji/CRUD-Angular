@@ -16,16 +16,16 @@ export class TelephoneService {
       await this.http.post(`${this.url}/${personId}`, telephoneDTO).toPromise();
     }
     catch{
-      return;
+      throw new Error;
     }
   }
 
-  public async DeleteTelephone(personId: number, telephoneId: number){
+  public async DeleteTelephone(personId: number, telephoneId: number) : Promise<void>{
     try{
-      await this.http.delete(`${this.url}/${personId}/${telephoneId}`);
+      await this.http.delete(`${this.url}/${personId}/${telephoneId}`).toPromise();
     }
     catch{
-      return;
+      throw new Error;
     }
   }
 

@@ -19,6 +19,10 @@ import { Person } from '../../../models/person';
 import { Telephone } from '../../../models/telephone';
 import { CollaboratorService } from '../../../services/collaborator-service/collaborator.service';
 import { ToastService } from '../../../services/toast-service/toast.service';
+import { MatDialog } from '@angular/material/dialog';
+import { DeleteAddressComponent } from '../../delete-address/delete-address.component';
+import { DeleteTelephoneComponent } from '../../delete-telephone/delete-telephone.component';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-update-collaborator',
@@ -40,7 +44,7 @@ import { ToastService } from '../../../services/toast-service/toast.service';
 export class UpdateCollaboratorComponent implements OnInit{
 
   constructor(private datePipe : DatePipe, private toastService : ToastService, private collaboratorService : CollaboratorService, 
-    private router : Router, private route : ActivatedRoute, fb : FormBuilder){
+    private router : Router, private route : ActivatedRoute, fb : FormBuilder, public dialog : MatDialog, private location : Location){
       this.collaboratorForm = fb.group({
         'registrationNumber': [null, Validators.required],
         'name': ['', Validators.compose([Validators.required, Validators.minLength(6), Validators.maxLength(50)])],
@@ -58,15 +62,14 @@ export class UpdateCollaboratorComponent implements OnInit{
   person? : Person;
   collaboratorForm : FormGroup;
 
-  addresses?: Address[] = [];
   addressDataSource: MatTableDataSource<Address> = new MatTableDataSource<Address>();
   addressColumnsToDisplay = ['CEP', 'street', 'number','neighborhood','city', 'type','delete'];
 
-  telephones?: Telephone[] = [];
   telephoneDataSource: MatTableDataSource<Telephone> = new MatTableDataSource<Telephone>();
   telephoneColumnsToDisplay = ['number', 'type','delete'];
   
   ngOnInit(): void {
+    
     this.collaboratorId = Number(this.route.snapshot.paramMap.get('id')?.slice(1));
     this.loadCollaborator();
 
@@ -79,8 +82,6 @@ export class UpdateCollaboratorComponent implements OnInit{
 
     this.person = this.collaborator.person;
 
-    console.log(this.collaborator);
-
     if (this.collaborator) {
       this.collaboratorForm.patchValue({
         registrationNumber: this.collaborator.registrationNumber,
@@ -92,9 +93,9 @@ export class UpdateCollaboratorComponent implements OnInit{
         collaboratorType: String(this.collaborator.collaboratorType),
         admissionDate: this.collaborator.admissionDate
       });
-      console.log(this.collaboratorForm.value);
   }
   }
+
 
 
     private validateForm() : boolean {
@@ -141,7 +142,29 @@ export class UpdateCollaboratorComponent implements OnInit{
   
       }
     }
-    
+
+    async openAddressDialog(address : Address) {
+      this.dialog.open(DeleteAddressComponent, {
+        data : {
+          person : this.person,
+          address : address
+        }
+      });
+    }
+  
+    async openTelephoneDialog(telephone : Telephone) {
+      this.dialog.open(DeleteTelephoneComponent, {
+        data : {
+          person : this.person,
+          telephone : telephone
+        }
+      });
+    }
+
+    reload(): void {
+      this.location.go(this.location.path());
+    }
+
     public navigateTo(route: string, append?: number) {
       var path = route;
       if(append != null){

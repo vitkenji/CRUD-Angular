@@ -39,9 +39,9 @@ export class UserService {
     }
   }
 
-  public async DeleteUser(username: string){
+  public async DeleteUser(username: string) : Promise<void>{
     try{
-      await this.http.delete(`${this.url}/${username}`);
+      await this.http.delete(`${this.url}/${username}`).toPromise();
     }
     catch{
       return;

@@ -1,0 +1,81 @@
+/* Modal container */
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
+  
+  .modal {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+  }
+  
+  .modal-message {
+    font-size: 18px;
+    color: #34495e;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .modal-buttons {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+  }
+  
+  .modal-button {
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+  }
+  
+  .cancel-button {
+    background-color: #95a5a6;
+    color: white;
+  }
+  
+  .cancel-button:hover {
+    background-color: #7f8c8d;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .delete-button {
+    background-color: #e74c3c;
+    color: white;
+  }
+  
+  .delete-button:hover {
+    background-color: #c0392b;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .modal-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.3);
+  }
+  
+  .modal-button:active {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .modal {
+      width: 90%;
+    }
+  }
+  

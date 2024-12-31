@@ -11,15 +11,6 @@ import { UserDTO } from '../../../models/DTO/userDTO';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
 import { ToastService } from '../../../services/toast-service/toast.service';
-import {
-  MAT_DIALOG_DATA,
-  MatDialog,
-  MatDialogActions,
-  MatDialogClose,
-  MatDialogContent,
-  MatDialogRef,
-  MatDialogTitle,
-} from '@angular/material/dialog';
 
 @Component({
   selector: 'app-create-user',
