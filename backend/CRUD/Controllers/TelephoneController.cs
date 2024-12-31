@@ -17,7 +17,7 @@ namespace CRUD.Controllers
         }
 
         [HttpPost("{personId}")]
-        public async Task<IActionResult> PostTelephone([FromQuery] TelephoneDTO request, [FromRoute] int personId)
+        public async Task<IActionResult> PostTelephone(TelephoneDTO request, [FromRoute] int personId)
         {
             try
             {

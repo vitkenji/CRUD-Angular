@@ -37,7 +37,7 @@ export const routes: Routes = [
                     )
             },
             {
-                path: 'update-user',
+                path: 'update-user/:id',
                 loadComponent: () => 
                     import('./pages/users/update-user/update-user.component').then(
                         (m) => m.UpdateUserComponent
@@ -58,10 +58,24 @@ export const routes: Routes = [
                     )
             },
             {
-                path: 'update-collaborator',
+                path: 'update-collaborator/:id',
                 loadComponent: () => 
                     import('./pages/collaborators/update-collaborator/update-collaborator.component').then(
                         (m) => m.UpdateCollaboratorComponent
+                    )
+            },
+            {
+                path: 'create-address/:id',
+                loadComponent: () => 
+                    import('./pages/create-address/create-address.component').then(
+                        (m) => m.CreateAddressComponent
+                    )
+            },
+            {
+                path: 'create-telephone/:id',
+                loadComponent: () => 
+                    import('./pages/create-telephone/create-telephone.component').then(
+                        (m) => m.CreateTelephoneComponent
                     )
             }
 

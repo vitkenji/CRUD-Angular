@@ -21,19 +21,22 @@ export class CollaboratorService {
     }
   }
 
-  public async getCollaboratorById(id :number): Promise<Collaborator | undefined>{
-    try{
-     return await this.http.get<Collaborator>(`${this.url}/${id}`).toPromise();
-    }
-    catch{
-      return undefined;
+  public async getCollaboratorById(id: number): Promise<Collaborator> {
+    try {
+      var collaborator = await this.http.get<Collaborator>(`${this.url}/${id}`).toPromise();
+      if(collaborator == undefined){
+        throw new Error('Collaborator not found');
+      }
+      return collaborator;
+      
+      } catch (error) {
+      throw new Error('Could not retrieve collaborator');
     }
   }
+  
 
   public async PostCollaborator(collaboratorDTO: collaboratorDTO) : Promise<void>{
     try{
-      console.log(this.url);
-      console.log(collaboratorDTO);
       await this.http.post(this.url, collaboratorDTO).toPromise();
     }
     catch (error : any){

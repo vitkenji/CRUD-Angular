@@ -1,1 +1,40 @@
-<p>update-user works!</p>
+<h2 class="header">Edit User</h2>
+<form [formGroup]="userForm" (ngSubmit)="postUser()">
+    <mat-form-field>
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="username" minlength="6" maxlength="20" required readonly>
+      <mat-error *ngIf="userForm.get('username')?.hasError('required')">Username required</mat-error>
+      <mat-error *ngIf="userForm.get('username')?.hasError('minlength')">Minimum of 6 characters</mat-error>
+      <mat-error *ngIf="userForm.get('username')?.hasError('maxlength')">Maximum of 20 characters</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" minlength="6" maxlength="50" required>
+      <mat-error *ngIf="userForm.get('name')?.hasError('required')">Name required</mat-error>
+      <mat-error *ngIf="userForm.get('name')?.hasError('minlength')">Minimum of 6 characters</mat-error>
+      <mat-error *ngIf="userForm.get('name')?.hasError('maxlength')">Maximum of 50 characters</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>Password</mat-label>
+      <input matInput formControlName="password" minlength="6" maxlength="20" required>
+      <mat-error *ngIf="userForm.get('password')?.hasError('required')">Password required</mat-error>
+      <mat-error *ngIf="userForm.get('password')?.hasError('minlength')">Minimum of 6 characters</mat-error>
+      <mat-error *ngIf="userForm.get('password')?.hasError('maxlength')">Maximum of 20 characters</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Confirm Password</mat-label>
+      <input matInput formControlName="confirmPassword" minlength="6" maxlength="20" required>
+      <mat-error *ngIf="userForm.get('confirmPassword')?.hasError('required')">Confirm Password required</mat-error>
+      <mat-error *ngIf="userForm.get('confirmPassword')?.hasError('minlength')">Minimum of 6 characters</mat-error>
+      <mat-error *ngIf="userForm.get('confirmPassword')?.hasError('maxlength')">Maximum of 20 characters</mat-error>
+    </mat-form-field>
+    
+    <div readonly>
+    <mat-label>Administrator</mat-label>
+    <mat-checkbox formControlName="admin" ></mat-checkbox>
+    </div>
+      <button mat-raised-button type="submit" color="primary">Submit</button>
+  </form>

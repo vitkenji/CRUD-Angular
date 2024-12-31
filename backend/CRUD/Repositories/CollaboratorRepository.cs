@@ -32,7 +32,26 @@ namespace CRUD.Repositories
 
         public async Task PostCollaborator(Collaborator collaborator)
         {
-            await _context.Collaborator.AddAsync(collaborator);
+            var existingCollaborator = await _context.Collaborator.Where(c => c.Person.CPF == collaborator.Person.CPF)
+                .Include(c => c.Person).FirstOrDefaultAsync();
+            if (existingCollaborator != null)
+            {
+                existingCollaborator.RegistrationNumber = collaborator.RegistrationNumber;
+                existingCollaborator.Contribution = collaborator.Contribution;
+                existingCollaborator.AdmissionDate = collaborator.AdmissionDate;
+                existingCollaborator.CollaboratorType = collaborator.CollaboratorType;
+                existingCollaborator.Person.CPF = collaborator.Person.CPF;
+                existingCollaborator.Person.BirthDate = collaborator.Person.BirthDate;
+                existingCollaborator.Person.RG = collaborator.Person.RG;
+                existingCollaborator.Person.Name = collaborator.Person.Name;
+
+                _context.Collaborator.Update(existingCollaborator);
+            }
+            else
+            {
+                await _context.Collaborator.AddAsync(collaborator);
+
+            }
             await _context.SaveChangesAsync();
         }
 

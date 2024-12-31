@@ -11,9 +11,9 @@ export class TelephoneService {
 
   private url = 'https://localhost:7234/api/Telephone';
 
-  public async PostTelephone(telephoneDTO : TelephoneDTO, personId: number){
+  public async PostTelephone(telephoneDTO : TelephoneDTO, personId: number) : Promise<void>{
     try{
-      await this.http.post(`${this.url}/${personId}`, telephoneDTO);
+      await this.http.post(`${this.url}/${personId}`, telephoneDTO).toPromise();
     }
     catch{
       return;

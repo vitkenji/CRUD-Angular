@@ -51,7 +51,7 @@ export class CreateCollaboratorComponent {
   private validateForm() : boolean {
 
     if(this.collaboratorForm.invalid){
-      this.toastService.showError('Error adding user', 'Error');
+      this.toastService.showError('Error adding collaborator', 'Error');
       return false;
     }
 
@@ -86,8 +86,6 @@ export class CreateCollaboratorComponent {
         admissionDate: this.datePipe.transform(this.collaboratorForm.value.admissionDate, 'yyyy-MM-dd') ?? '1800-01-01',
       };
 
-      console.log(this.collaboratorForm.value.CPF);
-      console.log(typeof(this.collaboratorForm.value.CPF));
       await this.collaboratorService.PostCollaborator(collaborator);
       this.toastService.showSuccess('Collaborator successfully added', 'Success');
       this.router.navigate(['collaborators']);

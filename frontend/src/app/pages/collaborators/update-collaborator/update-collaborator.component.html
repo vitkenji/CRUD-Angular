@@ -1,1 +1,136 @@
-<p>update-collaborator works!</p>
+<h2 class="header">Edit Collaborator</h2>
+<form [formGroup]="collaboratorForm" (ngSubmit)="putCollaborator()">
+    <mat-form-field>
+      <mat-label>Registration Number</mat-label>
+      <input matInput formControlName="registrationNumber" (keydown)="validateNumber($event)" required>
+      <mat-error *ngIf="collaboratorForm.get('registrationNumber')?.hasError('required')">Registration number required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" minlength="6" maxlength="50" required>
+      <mat-error *ngIf="collaboratorForm.get('name')?.hasError('required')">Name required</mat-error>
+      <mat-error *ngIf="collaboratorForm.get('name')?.hasError('minlength')">Minimum of 6 characters</mat-error>
+      <mat-error *ngIf="collaboratorForm.get('name')?.hasError('maxlength')">Maximum of 50 characters</mat-error>
+    </mat-form-field>
+    
+    <mat-form-field>
+      <mat-label>CPF</mat-label>
+      <input matInput formControlName="CPF" [maskito]="CPFmask" maxlength="14" (keydown)="validateNumber($event)" required>
+      <mat-error *ngIf="collaboratorForm.get('CPF')?.hasError('required')">CPF required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Birth Date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="birthDate" required>
+      <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+      <mat-error *ngIf="collaboratorForm.get('birthDate')?.hasError('required')">Birth Date required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>RG</mat-label>
+      <input matInput formControlName="RG"  [maskito]="RGmask" maxlength="13" (keydown)="validateNumber($event)" required>
+      <mat-error *ngIf="collaboratorForm.get('RG')?.hasError('required')">RG required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Collaborator type</mat-label>
+      <mat-select formControlName="collaboratorType" required>
+        <mat-option value="1">Permanent</mat-option>
+        <mat-option value="2">Intern</mat-option>
+        <mat-option value="3">Outsourced</mat-option>
+      </mat-select>
+      <mat-error *ngIf="collaboratorForm.get('collaboratorType')?.hasError('required')">Type required</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-label>Contribution</mat-label>
+      <input currencyMask [options]="{prefix : 'R$', thousands: '.', decimal: ','}" matInput formControlName="contribution">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <mat-label>Admission Date</mat-label>
+      <input matInput [matDatepicker]="picker2" formControlName="admissionDate">
+      <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+        
+      <button mat-raised-button type="submit" color="primary">Submit</button>
+</form>
+
+<h2 class="users-header">Addresses</h2>
+<table mat-table [dataSource]="addressDataSource" class="custom-table">
+  <ng-container matColumnDef="CEP">
+    <th mat-header-cell *matHeaderCellDef class="table-header">CEP</th>
+    <td mat-cell *matCellDef="let address" class="table-cell">{{address.cep}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="street">
+    <th mat-header-cell *matHeaderCellDef class="table-header">Street</th>
+    <td mat-cell *matCellDef="let address" class="table-cell">{{address.street}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="number">
+    <th mat-header-cell *matHeaderCellDef class="table-header">Number</th>
+    <td mat-cell *matCellDef="let address" class="table-cell">{{address.number}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="neighborhood">
+    <th mat-header-cell *matHeaderCellDef class="table-header">Neighborhood</th>
+    <td mat-cell *matCellDef="let address" class="table-cell">{{address.neighborhood}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="city">
+    <th mat-header-cell *matHeaderCellDef class="table-header">City</th>
+    <td mat-cell *matCellDef="let address" class="table-cell">{{address.city}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef class="table-header">Type</th>
+    <td mat-cell *matCellDef="let address" class="table-cell">{{getAddressType(address.addressType)}}</td>
+  </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef class="table-header">Delete</th>
+      <td mat-cell *matCellDef="let address">
+        <button mat-button class="delete-button">
+          Delete
+        </button>
+      </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="addressColumnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: addressColumnsToDisplay" class="table-row"></tr>
+</table>
+
+<button mat-raised-button class="custom-button" (click)="navigateTo('create-address',collaboratorId )">Add Address</button>
+
+
+<h2 class="users-header">Telephones</h2>
+<table mat-table [dataSource]="telephoneDataSource" class="custom-table">
+  <ng-container matColumnDef="number">
+    <th mat-header-cell *matHeaderCellDef class="table-header">Number</th>
+    <td mat-cell *matCellDef="let telephone" class="table-cell">{{telephone.number}}</td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef class="table-header">Type</th>
+    <td mat-cell *matCellDef="let telephone" class="table-cell">{{getTelephoneType(telephone.telephoneType)}}</td>
+  </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef class="table-header">Delete</th>
+      <td mat-cell *matCellDef="let telephone">
+        <button mat-button class="delete-button">
+          Delete
+        </button>
+      </td>
+    </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="telephoneColumnsToDisplay"></tr>
+  <tr mat-row *matRowDef="let myRowData; columns: telephoneColumnsToDisplay" class="table-row"></tr>
+</table>
+
+<button mat-raised-button class="custom-button" (click)="navigateTo('create-telephone', collaboratorId)">Add Telephone</button>

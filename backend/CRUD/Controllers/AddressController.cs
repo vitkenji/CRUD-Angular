@@ -15,7 +15,7 @@ namespace CRUD.Controllers
         }
 
         [HttpPost("{personId}")]
-        public async Task<IActionResult> PostAddress([FromQuery] AddressDTO request, [FromRoute] int personId)
+        public async Task<IActionResult> PostAddress(AddressDTO request, [FromRoute] int personId)
         {
             try
             {
@@ -41,8 +41,8 @@ namespace CRUD.Controllers
                 return BadRequest(new { message = ex.Message });
             }
         }
-        [HttpGet]
-        public async Task<IActionResult> GetAddressByCEP([FromQuery] int CEP)
+        [HttpGet("{CEP}")]
+        public async Task<IActionResult> GetAddressByCEP([FromRoute] int CEP)
         {
             try
             {

@@ -79,4 +79,16 @@ form {
       padding: 10px 20px;
     }
   }
+
+  .input-group {
+    display: flex;
+    align-items: center; 
+  }
   
+  .cep-field {
+    flex: 1; 
+  }
+  
+  .search-btn {
+    margin-left: 8px;
+  }

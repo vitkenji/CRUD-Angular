@@ -1,12 +1,12 @@
 import { Telephone } from "./telephone";
-import { Address } from "cluster";
+import { Address } from "./address";
 
 export interface Person{
     id: number;
-    CPF: number;
+    cpf: number;
     name: string;
     birthDate: Date;
-    RG: string;
+    rg: string;
     telephones?: Telephone[];
     addresses?: Address[];
 }

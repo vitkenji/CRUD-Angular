@@ -30,7 +30,19 @@ namespace CRUD.Repositories
             {
                 throw new Exception("Request is null");
             }
-            await _context.User.AddAsync(user);
+            var existingUser = await _context.User.Where(c => c.Username == user.Username).FirstOrDefaultAsync();
+
+            if (existingUser != null)
+            {
+                existingUser.Name = user.Name;
+                existingUser.Password = user.Password;
+                existingUser.Admin = user.Admin;
+                _context.User.Update(existingUser);
+            }
+            else
+            {
+                await _context.User.AddAsync(user);
+            }
             await _context.SaveChangesAsync();
         }
 

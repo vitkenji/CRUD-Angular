@@ -1,0 +1,55 @@
+<h2 class="header">Add Address</h2>
+<form [formGroup]="addressForm" (ngSubmit)="postAddress()">
+  <div class="input-group">
+    <mat-form-field class="cep-field">
+      <mat-label>CEP</mat-label>
+      <input matInput formControlName="CEP" [maskito]="numberMask" minlength="8" maxlength="11" (keydown)="validateNumber($event)" required>
+      <mat-error *ngIf="addressForm.get('number')?.hasError('required')">CEP required</mat-error>  
+    </mat-form-field>
+  
+    <button mat-icon-button (click)="getAddressByCEP()" aria-label="Search" class="search-btn">
+      <mat-icon>search</mat-icon>
+    </button>  
+  </div>
+  
+
+  <mat-form-field>
+    <mat-label>Street</mat-label>
+    <input matInput formControlName="street"  maxlength="100" required>
+    <mat-error *ngIf="addressForm.get('street')?.hasError('required')">Street required</mat-error>
+    <mat-error *ngIf="addressForm.get('street')?.hasError('maxlength')">Maximum of 100 characters</mat-error>
+  </mat-form-field>
+
+  
+  <mat-form-field>
+    <mat-label>Neighborhood</mat-label>
+    <input matInput formControlName="neighborhood" maxlength="50" required>
+    <mat-error *ngIf="addressForm.get('neighborhood')?.hasError('required')">Neighborhood required</mat-error>
+    <mat-error *ngIf="addressForm.get('neighborhood')?.hasError('maxlength')">Maximum of 50 characters</mat-error>
+  </mat-form-field>
+  
+  <mat-form-field>
+    <mat-label>City</mat-label>
+    <input matInput formControlName="city"  maxlength="100" required>
+    <mat-error *ngIf="addressForm.get('city')?.hasError('required')">City required</mat-error>
+    <mat-error *ngIf="addressForm.get('city')?.hasError('maxlength')">Maximum of 100 characters</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Number</mat-label>
+    <input matInput formControlName="number" maxlength="10" required>
+    <mat-error *ngIf="addressForm.get('number')?.hasError('required')">Number required</mat-error>
+    <mat-error *ngIf="addressForm.get('number')?.hasError('maxlength')">Maximum of 10 characters</mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Address Type</mat-label>
+    <mat-select formControlName="addressType" required>
+      <mat-option value="1">Home</mat-option>
+      <mat-option value="2">Business</mat-option>
+    </mat-select>
+    <mat-error *ngIf="addressForm.get('addressType')?.hasError('required')">Type required</mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button type="submit" color="primary">Submit</button>
+</form>

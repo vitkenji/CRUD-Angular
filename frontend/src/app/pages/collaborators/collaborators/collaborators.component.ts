@@ -45,9 +45,8 @@ export class CollaboratorsComponent implements OnInit {
   public navigateTo(route: string, append?: number) {
     var path = route;
     if(append != null){
-      path = path + `/${append}`;
+      path = path + `/:${append}`;
     }
-
     this.router.navigate([path]);
   }
 }

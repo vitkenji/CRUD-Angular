@@ -1,0 +1,20 @@
+<h2 class="header">Add Telephone</h2>
+<form [formGroup]="telephoneForm" (ngSubmit)="postTelephone()">
+    <mat-form-field>
+      <mat-label>Number</mat-label>
+      <input matInput formControlName="number" [maskito]="numberMask" (keydown)="validateNumber($event)" required>
+      <mat-error *ngIf="telephoneForm.get('number')?.hasError('required')">Number required</mat-error>
+    </mat-form-field>
+  
+    <mat-form-field>
+        <mat-label>Telephone Type</mat-label>
+        <mat-select formControlName="telephoneType" required>
+          <mat-option value="1">Home</mat-option>
+          <mat-option value="2">Business</mat-option>
+          <mat-option value="3">Cellphone</mat-option>
+        </mat-select>
+        <mat-error *ngIf="telephoneForm.get('telephoneType')?.hasError('required')">Type required</mat-error>
+      </mat-form-field>
+          
+      <button mat-raised-button type="submit" color="primary">Submit</button>
+  </form>
