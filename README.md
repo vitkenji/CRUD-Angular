@@ -6,3 +6,7 @@ Overview:
 
 New user registration:
 ![image](https://github.com/user-attachments/assets/fd2b7174-b003-4806-beb9-11d6d376371e)
+
+Error 404 page:
+![image](https://github.com/user-attachments/assets/782bff0e-c8a1-40f4-85da-19ee18a14160)
+
