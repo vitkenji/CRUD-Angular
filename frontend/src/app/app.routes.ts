@@ -1,13 +1,17 @@
 import { Routes } from '@angular/router';
-import { MainAppComponent } from './layout/main-app/main-app.component';
 import { authGuard } from './guards/auth.guard';
-import { deactivateGuard } from './guards/deactivate.guard';
+import { MainAppComponent } from './layout/main-app/main-app.component';
 
 export const routes: Routes = [
     {
         path: 'login',
         loadComponent: () =>
             import('./pages/login/login.component').then((m)=> m.LoginComponent)
+    },
+    {
+        path: 'error404',
+        loadComponent: () =>
+            import('./shared/error404/error404.component').then((m)=> m.Error404Component)
     },
     {
         path: '',

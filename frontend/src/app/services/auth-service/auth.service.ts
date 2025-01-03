@@ -49,63 +49,12 @@ export class AuthService {
     localStorage.removeItem('username');
   }
 
-  private async getToken(response: any) {
-    try {
-      let accessToken = (await firstValueFrom<any>(response))?.access_token;
-      if (accessToken) {
-        console.log(accessToken);
-        localStorage.setItem('access_token', accessToken);
-        localStorage.setItem('isLoggedIn', 'true');
-
-        let payload = this.decodeBase64(accessToken.split('.')[1]);
-
-        localStorage.setItem(
-          'user_data',
-          JSON.stringify(JSON.parse(payload))
-        );
-        
-        this.isLoggedInSubject.next(true);
-      }
-    } catch (error) {
-      console.error(error);
-      throw error;
-    }
-  }
-
-  private parseJwt(token: string) {
-    if (token) {
-      if (token.indexOf('.') > 0) {
-        const base64Url = token.split('.')[1];
-        const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        const jsonPayload = decodeURIComponent(
-          atob(base64)
-            .split('')
-            .map((c) => {
-              return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            })
-            .join('')
-        );
-        return JSON.parse(jsonPayload);
-      }
-    }
-  }
-
   public hasValidToken(): boolean | Promise<boolean> {
     const authToken = localStorage.getItem('access_token') || '';
     if (!!authToken) {
       return true;
     }
     return false;
-  }
-
-  private decodeBase64(base64: string): string {
-    let decoded = window.atob(base64);
-    try {
-      decoded = decodeURIComponent(escape(decoded));
-    } catch (e) {
-      console.error('decodeBase64 error:', e);
-    }
-    return decoded;
   }
 
 }
