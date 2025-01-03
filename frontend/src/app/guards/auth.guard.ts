@@ -9,6 +9,6 @@ export const authGuard: CanActivateFn = (route, state) => {
   {
     return true;
   }
-  router.navigate(['error404']);
+  router.navigate(['error401']);
   return false;
 };

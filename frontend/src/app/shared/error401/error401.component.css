@@ -1,0 +1,61 @@
+.error-container {
+    text-align: center;
+    padding: 50px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+  }
+  
+  .error-header {
+    font-size: 36px;
+    font-weight: bold;
+    color: #34495e;
+    margin-bottom: 20px;
+  }
+  
+  .error-message {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 40px;
+  }
+  
+  .custom-button {
+    background-color: #34495e;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .custom-button:hover {
+    background-color: #34495e;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  .custom-button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(22, 160, 133, 0.3);
+  }
+  
+  .custom-button:active {
+    background-color: #34495e;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    .error-header {
+      font-size: 28px;
+    }
+  
+    .error-message {
+      font-size: 16px;
+    }
+  
+    .custom-button {
+      font-size: 12px;
+    }
+  }
+  
